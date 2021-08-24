@@ -23,7 +23,7 @@ export default function Home() {
                     console.log(res?.data)
                 })
                 .catch(err => {
-                    if(err?.response?.status == 400) console.log(err.toString())
+                    if (err?.response?.status == 400) console.log(err.toString())
                     else router.push('/404')
                 })
         }
@@ -37,21 +37,21 @@ export default function Home() {
 
                 <div className="row  border-bottom p-3">
                     <div className="col-md-3">
-                       <Icon />
+                        <Icon />
                         # BlockHeight
                     </div>
                     <div className="col-md">
-                     
+
                         {data?.data?.number}
-                        <a href={`/block/`+ (data?.data.number -1)}> <button className="btn btn-small py-0 px-2 btn-danger"> {'<'} </button></a>
-                       
-                        <a href={`/block/`+ (data?.data.number +1)}> <button className="btn btn-small py-0 px-2 btn-primary"> {'>'}  </button> </a> 
+                        <a href={`/block/` + (data?.data.number - 1)}> <button className="btn btn-small py-0 px-2 btn-danger"> {'<'} </button></a>
+
+                        <a href={`/block/` + (data?.data.number + 1)}> <button className="btn btn-small py-0 px-2 btn-primary"> {'>'}  </button> </a>
                     </div>
 
                 </div>
                 <div className="row rounded  border-bottom p-3">
                     <div className="col-md-3">
-                    <Icon />
+                        <Icon />
 
                         Timestamp
                     </div>
@@ -65,7 +65,7 @@ export default function Home() {
 
                 <div className="row  border-bottom p-3">
                     <div className="col-md-3">
-                       <Icon />
+                        <Icon />
                         Transactions
                     </div>
                     <div className="col-md">
@@ -77,7 +77,7 @@ export default function Home() {
                 </div>
                 <div className="row  border-bottom p-3">
                     <div className="col-md-3">
-                       <Icon />
+                        <Icon />
                         Difficult
                     </div>
                     <div className="col-md">
@@ -88,7 +88,7 @@ export default function Home() {
 
                 <div className="row  border-bottom p-3">
                     <div className="col-md-3">
-                       <Icon />                        Size
+                        <Icon />                        Size
                     </div>
                     <div className="col-md">
                         {data?.data.size} bytes
@@ -98,7 +98,7 @@ export default function Home() {
 
                 <div className="row  border-bottom p-3">
                     <div className="col-md-3">
-                       <Icon />                        Gas Used
+                        <Icon />                        Gas Used
                     </div>
                     <div className="col-md">
                         {data?.data.gasUsed.toLocaleString()}
@@ -108,7 +108,7 @@ export default function Home() {
 
                 <div className="row  border-bottom p-3">
                     <div className="col-md-3">
-                       <Icon />                        Gas Limit
+                        <Icon />                        Gas Limit
                     </div>
                     <div className="col-md">
                         {data?.data.gasLimit.toLocaleString()}
@@ -119,7 +119,7 @@ export default function Home() {
 
                 <div className="row  border-bottom p-3">
                     <div className="col-md-3">
-                       <Icon />                        Mined by
+                        <Icon />                        Mined by
                     </div>
                     <div className="col-md">
                         <a alt="block hash " className="text-primary" href={`/address/${data?.data.miner}`}>
@@ -130,7 +130,7 @@ export default function Home() {
                 </div>
                 <div className="row  border-bottom p-3">
                     <div className="col-md-3">
-                       <Icon />                        Hash
+                        <Icon />                        Hash
                     </div>
                     <div className="col-md">
                         <a alt="block hash " className="text-primary" href={`/block/${data?.data.hash}`}>
@@ -141,7 +141,7 @@ export default function Home() {
                 </div>
                 <div className="row  border-bottom p-3">
                     <div className="col-md-3">
-                       <Icon/> MixHash
+                        <Icon /> MixHash
                     </div>
                     <div className="col-md">
                         {data?.data["mixHash"]}
@@ -153,7 +153,9 @@ export default function Home() {
                         <Icon /> ParentHash
                     </div>
                     <div className="col-md">
-                        {data?.data.parentHash}
+                        <a alt="block hash " className="text-primary" href={`/block/${data?.data.parentHash}`}>
+                            {data?.data.parentHash}
+                        </a>
                     </div>
 
                 </div>

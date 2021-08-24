@@ -22,7 +22,7 @@ export default function Home() {
                     setData(res?.data?.data)
                 })
                 .catch(err => {
-                    if(err?.response?.status == 400) console.log(err.toString())
+                    if (err?.response?.status == 400) console.log(err.toString())
                     else router.push('/404')
                 })
         }
@@ -34,7 +34,7 @@ export default function Home() {
                     setData(res?.data?.data)
                 })
                 .catch(err => {
-                    if(err?.response?.status == 400) console.log(err.toString())
+                    if (err?.response?.status == 400) console.log(err.toString())
                     else router.push('/404')
                 })
         }
@@ -61,11 +61,11 @@ export default function Home() {
 
                 <div class="row  border-bottom p-3">
                     <div class="col-md-3">
-                       <Icon />
+                        <Icon />
                         Transaction Hash
                     </div>
                     <div class="col-md">
-                       {data?.hash}  
+                        {data?.hash}
                     </div>
 
                 </div>
@@ -82,20 +82,22 @@ export default function Home() {
 
                 <div class="row  border-bottom p-3">
                     <div class="col-md-3">
-                       <Icon /> Block:
+                        <Icon /> Block:
                     </div>
                     <div class="col-md">
-                        {data?.blockNumber} 
+                        <a alt="block hash " className="text-primary" href={`/block/${data?.blockNumber}`}>
+                            {data?.blockNumber}
+                        </a>
                     </div>
 
                 </div>
 
                 <div class="row  border-bottom p-3">
                     <div class="col-md-3">
-                       <Icon />  From
+                        <Icon />  From
                     </div>
                     <div class="col-md">
-                    <a alt="block hash " className="text-primary" href={`/address/${data?.from}`}>
+                        <a alt="block hash " className="text-primary" href={`/address/${data?.from}`}>
                             {data?.from}
                         </a>
                     </div>
@@ -104,11 +106,11 @@ export default function Home() {
 
                 <div class="row  border-bottom p-3">
                     <div class="col-md-3">
-                       <Icon /> To
+                        <Icon /> To
                     </div>
                     <div class="col-md"> <a alt="block hash " className="text-primary" href={`/address/${data?.to}`}>
-                            {data?.to}
-                        </a>
+                        {data?.to}
+                    </a>
                     </div>
 
                 </div>
@@ -116,17 +118,17 @@ export default function Home() {
 
                 <div class="row  border-bottom p-3">
                     <div class="col-md-3">
-                       <Icon /> Value
+                        <Icon /> Value
                     </div>
                     <div class="col-md">
-                            {data?.value} Ether
+                        {data?.value} Ether
                     </div>
 
                 </div>
-                
+
                 <div class="row  border-bottom p-3">
                     <div class="col-md-3">
-                       <Icon/> Gas
+                        <Icon /> Gas
                     </div>
                     <div class="col-md">
                         {data?.gas.toLocaleString()}
@@ -139,10 +141,10 @@ export default function Home() {
                     </div>
                     <div class="col-md">
                         {data?.gasPrice.toLocaleString()}
-                    </div> 
+                    </div>
 
                 </div>
-                
+
                 <div class="row  border-bottom p-3">
                     <div class="col-md-3">
                         <Icon /> Nonce
@@ -153,7 +155,7 @@ export default function Home() {
 
                 </div>
 
-            </div>  
+            </div>
         </div>
     )
 }
